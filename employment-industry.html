@@ -8079,12 +8079,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fe7105e6-f0dc-48c3-8dff-9f562609ca6c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=15f84f03-5b64-4615-943a-c37bd2f1f192">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">filtered_data</span> <span class="o">=</span> <span class="n">employmentRaw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -8094,6 +8094,8 @@ a.anchor-link {
 <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="p">[</span><span class="n">filtered_data</span><span class="p">[</span><span class="s1">'own_code'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span><span class="p">]</span>
 
 <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="p">[</span><span class="n">filtered_data</span><span class="p">[</span><span class="s1">'agglvl_code'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">73</span><span class="p">]</span>
+
+<span class="n">filtered_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'area_fips'</span><span class="p">,</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'qtr'</span><span class="p">,</span><span class="s1">'industry_code_name'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8115,7 +8117,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">chartDir</span><span class="p">):</span>
@@ -8136,15 +8138,42 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4f65d85b-aa80-45b9-9363-990bf43b2485">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">morpc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;module 'morpc' from 'c:\\Users\\aporr\\OneDrive - Mid-Ohio Regional Planning Commission\\insights-employment-industry\\..\\morpc-common\\morpc.py'&gt;</pre>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=be5ecafa-6a1c-4482-a608-661f61939d6e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">colorset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">morpc</span><span class="o">.</span><span class="n">CONST_COLOR_CYCLES</span><span class="p">[</span><span class="s2">"matplotlib"</span><span class="p">]))</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">morpc</span><span class="o">.</span><span class="n">CONST_COLOR_CYCLES</span><span class="p">[</span><span class="s2">"pastel"</span><span class="p">]))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">colorset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">morpc</span><span class="o">.</span><span class="n">CONST_COLOR_CYCLES</span><span class="p">[</span><span class="s2">"pairing1"</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -8155,7 +8184,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> agg
@@ -8177,6 +8206,9 @@ a.anchor-link {
 
     <span class="c1"># Normalize data for 100% stacking</span>
     <span class="n">county_data_pivot_percentage</span> <span class="o">=</span> <span class="n">county_data_pivot</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">county_data_pivot</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># Reverse the order of the columns so the categories appear alphabetically from top to bottom</span>
+    <span class="n">county_data_pivot_percentage</span> <span class="o">=</span> <span class="n">county_data_pivot_percentage</span><span class="p">[</span><span class="n">county_data_pivot_percentage</span><span class="o">.</span><span class="n">columns</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
     
     <span class="c1"># Generate a title string</span>
     <span class="n">title</span> <span class="o">=</span> <span class="s2">"Employment Share by Industry - </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">county</span><span class="p">)</span>
@@ -8192,9 +8224,11 @@ a.anchor-link {
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">county_data_pivot_percentage</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
-    <span class="n">legend</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Industry'</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">]</span>
+    <span class="n">legend</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">labels</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Industry'</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     
     <span class="c1"># Format the y-axis labels as integers with comma separators</span>
@@ -8223,6 +8257,7 @@ a.anchor-link {
         <span class="s2">"seriesOptions"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"gap"</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">county_data_pivot_percentage</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
         <span class="s2">"xAxisOptions"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"num_font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span><span class="mi">14</span><span class="p">},</span>
+            <span class="s2">"major_gridlines"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"visible"</span><span class="p">:</span><span class="kc">False</span><span class="p">}</span>
         <span class="p">},</span>
         <span class="s2">"yAxisOptions"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"min"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
@@ -8230,6 +8265,7 @@ a.anchor-link {
             <span class="s2">"num_font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span><span class="mi">14</span><span class="p">},</span>
             <span class="s2">"name_font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">14</span><span class="p">},</span>
             <span class="s2">"num_format"</span><span class="p">:</span> <span class="s2">"#,##0"</span><span class="p">,</span>
+            <span class="s2">"major_gridlines"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"visible"</span><span class="p">:</span><span class="kc">False</span><span class="p">}</span>            
         <span class="p">},</span>
         <span class="s2">"legendOptions"</span><span class="p">:{</span>
             <span class="s2">"position"</span><span class="p">:</span><span class="s2">"right"</span><span class="p">,</span>
@@ -8238,7 +8274,8 @@ a.anchor-link {
         <span class="s2">"sizeOptions"</span><span class="p">:{</span>
             <span class="s2">"x_scale"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
             <span class="s2">"y_scale"</span><span class="p">:</span><span class="mi">2</span>
-        <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"below"</span>
     <span class="p">}</span>
     <span class="n">morpc</span><span class="o">.</span><span class="n">data_chart_to_excel</span><span class="p">(</span><span class="n">county_data_pivot_percentage</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">chartType</span><span class="o">=</span><span class="s2">"column"</span><span class="p">,</span> <span class="n">dataOptions</span><span class="o">=</span><span class="n">dataOptions</span><span class="p">,</span> <span class="n">chartOptions</span><span class="o">=</span><span class="n">chartOptions</span><span class="p">)</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>    
@@ -8287,7 +8324,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">columnNames</span><span class="o">=</span><span class="p">[</span><span class="s2">"TileID"</span><span class="p">,</span><span class="s2">"TilesetID"</span><span class="p">,</span><span class="s2">"GeographyType"</span><span class="p">,</span><span class="s2">"GeographyName"</span><span class="p">,</span><span class="s2">"Category"</span><span class="p">,</span><span class="s2">"Headline"</span><span class="p">,</span><span class="s2">"Commentary"</span><span class="p">,</span><span class="s2">"ThumbnailURL"</span><span class="p">,</span><span class="s2">"Contributor"</span><span class="p">,</span><span class="s2">"Vintage"</span><span class="p">,</span><span class="s2">"UpdateInterval"</span><span class="p">,</span><span class="s2">"ShareURL"</span><span class="p">,</span><span class="s2">"DataProductURL"</span><span class="p">,</span><span class="s2">"MoreInformationURL"</span><span class="p">]</span>
@@ -8312,7 +8349,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columnNames</span><span class="p">)</span>
@@ -8337,7 +8374,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"GeographyName"</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="p">[</span><span class="s2">"county_name"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -8362,7 +8399,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"GeographyType"</span><span class="p">]</span> <span class="o">=</span> <span class="n">catalog</span><span class="p">[</span><span class="s2">"GeographyName"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">name</span><span class="p">:(</span><span class="s2">"Region"</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"15-County Region"</span> <span class="k">else</span> <span class="s2">"County"</span><span class="p">))</span>
@@ -8387,7 +8424,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"GEOLABEL"</span><span class="p">]</span> <span class="o">=</span> <span class="n">catalog</span><span class="p">[</span><span class="s2">"GeographyName"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">name</span><span class="p">:(</span><span class="s2">"Region15"</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"15-County Region"</span> <span class="k">else</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" County"</span><span class="p">,</span><span class="s2">""</span><span class="p">)))</span>
@@ -8412,7 +8449,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"TileID"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -8420,7 +8457,6 @@ a.anchor-link {
 <span class="n">catalog</span><span class="p">[</span><span class="s2">"Category"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">catalog</span><span class="p">[</span><span class="s2">"Headline"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"TBD"</span>
 <span class="n">catalog</span><span class="p">[</span><span class="s2">"Commentary"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"TBD"</span>
-<span class="n">catalog</span><span class="p">[</span><span class="s2">"MoreInformationURL"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
@@ -8442,7 +8478,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [77]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"ThumbnailURL"</span><span class="p">]</span> <span class="o">=</span> <span class="n">catalog</span><span class="p">[</span><span class="s2">"GEOLABEL"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">name</span><span class="p">:</span><span class="s2">"https://raw.githubusercontent.com/morpc-insights/employment-industry/refs/heads/main/output_data/charts/shares-</span><span class="si">{}</span><span class="s2">.svg"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
@@ -8467,7 +8503,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"Contributor"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Mid-Ohio Regional Planning Commission"</span>
@@ -8495,10 +8531,35 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [79]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"DataProductURL"</span><span class="p">]</span> <span class="o">=</span> <span class="n">catalog</span><span class="p">[</span><span class="s2">"GeographyName"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">name</span><span class="p">:</span><span class="s2">"https://www.arcgis.com/apps/dashboards/f939956abd634937b0e875b7a277aec9#region=</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="s2">"%20"</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=65a5b049-b7be-47ea-8753-a34070a72648">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Capture the fact sheet URL.  This points to a single document for all tiles in the tileset.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dc5f5363-8c90-4bf8-998c-bbda04093972">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s2">"MoreInformationURL"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"https://morpc1-my.sharepoint.com/:w:/g/personal/aporr_morpc_org/EZcbpRmm-OVAloxLS3ZdKuIBEXDlLLfcxc66yA4282nWaA?e=DL4oZ1"</span>
 </pre></div>
 </div>
 </div>
@@ -8520,7 +8581,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [81]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">columnNames</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"columns"</span><span class="p">)</span>
@@ -8545,7 +8606,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [82]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -8559,7 +8620,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[82]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8600,6 +8661,23 @@ a.anchor-link {
 <th>0</th>
 <td>None</td>
 <td>TBD-Shares</td>
+<td>Region</td>
+<td>15-County Region</td>
+<td>None</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>https://raw.githubusercontent.com/morpc-insigh...</td>
+<td>Mid-Ohio Regional Planning Commission</td>
+<td>2025</td>
+<td>annually</td>
+<td>None</td>
+<td>https://www.arcgis.com/apps/dashboards/f939956...</td>
+<td>https://morpc1-my.sharepoint.com/:w:/g/persona...</td>
+</tr>
+<tr>
+<th>1</th>
+<td>None</td>
+<td>TBD-Shares</td>
 <td>County</td>
 <td>Delaware County</td>
 <td>None</td>
@@ -8611,10 +8689,10 @@ a.anchor-link {
 <td>annually</td>
 <td>None</td>
 <td>https://www.arcgis.com/apps/dashboards/f939956...</td>
-<td>None</td>
+<td>https://morpc1-my.sharepoint.com/:w:/g/persona...</td>
 </tr>
 <tr>
-<th>1</th>
+<th>2</th>
 <td>None</td>
 <td>TBD-Shares</td>
 <td>County</td>
@@ -8628,10 +8706,10 @@ a.anchor-link {
 <td>annually</td>
 <td>None</td>
 <td>https://www.arcgis.com/apps/dashboards/f939956...</td>
-<td>None</td>
+<td>https://morpc1-my.sharepoint.com/:w:/g/persona...</td>
 </tr>
 <tr>
-<th>2</th>
+<th>3</th>
 <td>None</td>
 <td>TBD-Shares</td>
 <td>County</td>
@@ -8645,10 +8723,10 @@ a.anchor-link {
 <td>annually</td>
 <td>None</td>
 <td>https://www.arcgis.com/apps/dashboards/f939956...</td>
-<td>None</td>
+<td>https://morpc1-my.sharepoint.com/:w:/g/persona...</td>
 </tr>
 <tr>
-<th>3</th>
+<th>4</th>
 <td>None</td>
 <td>TBD-Shares</td>
 <td>County</td>
@@ -8662,24 +8740,7 @@ a.anchor-link {
 <td>annually</td>
 <td>None</td>
 <td>https://www.arcgis.com/apps/dashboards/f939956...</td>
-<td>None</td>
-</tr>
-<tr>
-<th>4</th>
-<td>None</td>
-<td>TBD-Shares</td>
-<td>County</td>
-<td>Hocking County</td>
-<td>None</td>
-<td>TBD</td>
-<td>TBD</td>
-<td>https://raw.githubusercontent.com/morpc-insigh...</td>
-<td>Mid-Ohio Regional Planning Commission</td>
-<td>2025</td>
-<td>annually</td>
-<td>None</td>
-<td>https://www.arcgis.com/apps/dashboards/f939956...</td>
-<td>None</td>
+<td>https://morpc1-my.sharepoint.com/:w:/g/persona...</td>
 </tr>
 </tbody>
 </table>
@@ -8704,7 +8765,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [83]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"catalog.xlsx"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
